@@ -9,7 +9,7 @@ module.exports = {
       type: 'nunjucks',
     },
     redis: {
-      url: 'redis://localhost:6379/10',
+      url: 'redis://:dev@localhost:6379/10',
     },
     schedules: [
       ['*/10 * * * * *', 'user.test'],

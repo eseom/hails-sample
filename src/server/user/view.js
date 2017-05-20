@@ -1,5 +1,7 @@
-const Joi = require('joi')
-const { server, models: { User } } = require('hails')
+import Joi from 'joi'
+import { server, models } from 'hails'
+
+const { User } = models
 
 server.route({
   path: '/user',

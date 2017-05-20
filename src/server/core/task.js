@@ -1,4 +1,4 @@
-const { server, logger } = require('hails')
+import { server, logger } from 'hails'
 
 server.scheduler.register('core.test', (job, done) => {
   logger.info('executed task "core.test", waiting an async job for 3 seconds...')

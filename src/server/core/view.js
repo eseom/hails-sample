@@ -1,4 +1,4 @@
-const { server } = require('hails')
+import { server } from 'hails'
 
 server.route({
   path: '/',
