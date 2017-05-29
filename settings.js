@@ -15,11 +15,11 @@ module.exports = {
       ['*/10 * * * * *', 'user.test'],
     ],
     database: {
-	  storage: 'test.database',
-	  dialect: 'sqlite',
+      storage: 'test.database',
+      dialect: 'sqlite',
     },
     database_pgsql: {
-      url: 'postgres://user@localhost/ranky',
+      url: 'postgres://user@localhost/dbname',
       options: {
         dialect: 'postgres',
         protocol: 'postgres',
@@ -28,7 +28,7 @@ module.exports = {
         },
       },
     },
-    test: {
+    database_test: {
       storage: ':memory:',
       dialect: 'sqlite',
     },

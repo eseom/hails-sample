@@ -2,16 +2,21 @@ import { server, logger } from 'hails'
 import settingsFile from '../../settings'
 
 const settings = settingsFile[process.env.NODE_ENV || 'development']
-const auth = (plugin, options, role) => {
-  return {
-    authenticate(request, reply) {
-      console.log(request.yar.get('user'))
-      reply.continue({
-        credentials: {},
-      })
-    },
-  }
-}
+
+// custom auth handler
+const auth = (plugin, options, role) => ({
+  authenticate(request, reply) {
+    request.user = request.yar.get('user')
+    reply.continue({
+      credentials: {},
+    })
+  },
+})
+
+settings.plugins = [
+  // add a new hapi tv plugin
+  require('tv'),
+]
 
 server
   .init(settings)
