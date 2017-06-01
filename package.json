@@ -31,7 +31,7 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
-    "hails": "^0.1.13",
+    "hails": "^0.1.14",
     "joi": "^10.4.1"
   },
   "devDependencies": {

@@ -2502,9 +2502,9 @@ gulplog@^1.0.0:
   dependencies:
     glogg "^1.0.0"
 
-hails@^0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/hails/-/hails-0.1.13.tgz#762daba3ec285ba84c34c2d11cd50469b80b3c79"
+hails@^0.1.14:
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/hails/-/hails-0.1.14.tgz#0bddf2f90613d34714e30d163ebf94bcc5bf5997"
   dependencies:
     catbox-redis "^3.0.1"
     hapi "^16.1.1"
@@ -3674,13 +3674,9 @@ moment-timezone@^0.5.4, moment-timezone@^0.5.x:
   dependencies:
     moment ">= 2.9.0"
 
-moment@2.17.x:
+moment@2.17.x, "moment@>= 2.9.0", moment@^2.13.0, moment@^2.16.0, moment@^2.17.1:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
-
-"moment@>= 2.9.0", moment@^2.13.0, moment@^2.16.0, moment@^2.17.1:
-  version "2.18.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
 ms@0.7.1:
   version "0.7.1"
