@@ -3,13 +3,6 @@
   "plugins": [
     "import"
   ],
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "./tools/webpack.development.js"
-      }
-    }
-  },
   "parser": "babel-eslint",
   "rules": {
     "semi": [

@@ -1,2 +1,2 @@
 require('../tools/babel-require')
-require('../src/server/index')
+require('../src/index')

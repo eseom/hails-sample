@@ -1,4 +1,5 @@
 const { server, logger } = require('hails')
+const HapiError = require('hapi-error')
 
 const settings = {
   connection: {
@@ -9,8 +10,11 @@ const settings = {
     },
   },
   modules: [
-    'core'
-  ]
+    'core',
+  ],
+  plugins: [
+    HapiError,
+  ],
 }
 
 server

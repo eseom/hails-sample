@@ -24,5 +24,9 @@ server
     console.log(`server has started at ${server.info.uri}`)
   })
   .catch((e) => {
-    console.log(e)
+    console.log('---------------', e)
   })
+
+process.on('uncaughtException', (error) => {
+  console.log('===========', error)
+})

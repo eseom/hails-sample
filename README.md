@@ -60,7 +60,7 @@ module.exports = {
 }
 ```
 
-- you can override this settings with /setting.js
+- you can override this settings with /settings.js
 
 # sample project's files structure
 ```

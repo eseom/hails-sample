@@ -11,7 +11,7 @@ server.route({
   method: 'get',
   handler: (request, reply) => {
     reply({ result: 'a test json response' })
-  }
+  },
 })
 
 server.route({
@@ -22,6 +22,9 @@ server.route({
   path: '/hello',
   method: 'get',
   handler: (request, reply) => {
-    reply.view('hello')
-  }
+    reply.view('hello', {
+      title: 'title1',
+      items: [[1, 'item1']],
+    })
+  },
 })
