@@ -1,11 +1,11 @@
 # hails-sample
 - hails: advanced web stack with hapijs, sequelize, kuejs
-- es7 version
+- typescript version
 
 # features
-- babel.io es7 support
+- typescript
 - django module style
-- eslint integrated
+- tslint integrated
 - hapi-swagger
 
 # required

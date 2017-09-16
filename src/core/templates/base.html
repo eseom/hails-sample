@@ -1,18 +1,31 @@
+<!DOCTYPE HTML>
 <html>
+
 <head>
-  <title>hails sample</title>
+  <title>base</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
-  <header>
-      {% block header %}
-    {% endblock %}
-      </header>
-      <div>
-        {% block content %}
-      {% endblock %}
-      {% block tt %}
-      {% endblock %}
-    </div>
+  <header id="header" class="alt">
+    <div class="logo"><a href="/">hails-sample</a></div>
+    <a href="#menu">Menu</a>
+  </header>
+
+  <!-- Nav -->
+  <nav id="menu">
+    <ul class="links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/">Generic</a></li>
+      <li><a href="/">Elements</a></li>
+    </ul>
+  </nav>
+
+  {% block main %}
+  {% endblock %}
+
 </body>
+
 </html>

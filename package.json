@@ -1,48 +1,25 @@
 {
-  "name": "hails-sample",
+  "name": "hails-sample3",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": {},
-  "license": "MIT",
   "scripts": {
-    "dev": "nodemon -L bin/server",
-    "hails": "hails"
+    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts"
   },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "es2015": true
-        }
-      ],
-      "stage-0"
-    ],
-    "plugins": [
-      "transform-decorators-legacy",
-      "transform-flow-strip-types"
-    ]
+  "license": "MIT",
+  "devDependencies": {
+    "@types/joi": "^10.4.2",
+    "@types/node": "^8.0.28",
+    "@types/sequelize": "3.30.4",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.2.2",
+    "nodemon": "^1.12.0",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
   },
   "dependencies": {
-    "babel-eslint": "^7.1.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.4.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.24.1",
-    "hails": "0.1.17",
-    "hapi-error": "^1.8.0",
-    "joi": "^10.4.1"
-  },
-  "devDependencies": {
-    "eslint": "^3.17.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-import-resolver-webpack": "^0.8.1",
-    "eslint-loader": "^1.6.3",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "nodemon": "^1.11.0",
-    "tv": "^6.1.0"
+    "hails": "0.2.9",
+    "joi": "^10.6.0",
+    "sequelize": "^3.30.4",
+    "tslint": "^5.7.0"
   }
 }

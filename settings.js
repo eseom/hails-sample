@@ -1,36 +1,26 @@
+const redisDSN = 'redis://:dev@localhost:6379/0'
+
 module.exports = {
   development: {
-    port: 3000,
+    // see https://github.com/eseom/hails#default-options
+    // possible to override anything
     modules: [
       'core',
-      'user',
     ],
-    viewEngine: {
-      type: 'nunjucks',
+    connection: {
+      port: 3000,
     },
-    redis: {
-      url: 'redis://:dev@localhost:6379/10',
-    },
-    schedules: [
-      ['*/10 * * * * *', 'user.test'],
-    ],
+    useSequelize: true,
     database: {
-      storage: 'test.database',
       dialect: 'sqlite',
+      storage: 'database.sql',
     },
-    database_pgsql: {
-      url: 'postgres://user@localhost/dbname',
-      options: {
-        dialect: 'postgres',
-        protocol: 'postgres',
-        dialectOptions: {
-          ssl: false,
-        },
+    scheduler: {
+      enable: true,
+      broker: {
+        redis: redisDSN,
       },
-    },
-    database_test: {
-      storage: ':memory:',
-      dialect: 'sqlite',
+      schedules: [['*/5 * * * * *', '/periodic-job']]
     },
   },
 }
