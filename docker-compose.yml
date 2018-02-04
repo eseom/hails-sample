@@ -1,0 +1,13 @@
+redis:
+  container_name: hails_sample_redis
+  image: bitnami/redis:latest
+  environment:
+    - ALLOW_EMPTY_PASSWORD=no
+    - REDIS_PASSWORD=dev
+  labels:
+    kompose.service.type: nodeport
+  ports:
+    - 19011:6379
+  volumes:
+    - ./docker/redis_data:/bitnami/redis
+

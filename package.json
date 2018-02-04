@@ -1,25 +1,14 @@
 {
-  "name": "hails-sample3",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "hails-sample",
   "scripts": {
-    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@types/joi": "^10.4.2",
-    "@types/node": "^8.0.28",
-    "@types/sequelize": "3.30.4",
-    "gulp": "^3.9.1",
-    "gulp-typescript": "^3.2.2",
-    "nodemon": "^1.12.0",
-    "ts-node": "^3.3.0",
-    "typescript": "^2.5.2"
+    "dev": "hails run"
   },
   "dependencies": {
-    "hails": "0.2.9",
-    "joi": "^10.6.0",
-    "sequelize": "^3.30.4",
-    "tslint": "^5.7.0"
+    "hails": "^0.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0"
   }
 }

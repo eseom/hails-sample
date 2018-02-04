@@ -1,26 +1,26 @@
-const redisDSN = 'redis://:dev@localhost:6379/0'
+const redisDSN = 'redis://:dev@localhost:19011/0'
 
 module.exports = {
   development: {
-    // see https://github.com/eseom/hails#default-options
-    // possible to override anything
+    context: './src',
     modules: [
       'core',
     ],
-    connection: {
-      port: 3000,
-    },
     useSequelize: true,
     database: {
+      storage: './sample.database',
       dialect: 'sqlite',
-      storage: 'database.sql',
+      migrationStorageTableName: 'sequelize_meta',
     },
+    redis: redisDSN,
     scheduler: {
       enable: true,
       broker: {
         redis: redisDSN,
       },
-      schedules: [['*/5 * * * * *', '/periodic-job']]
+      schedules: [
+        ['*/5 * * * * *', '/core/periodic-job'],
+      ],
     },
   },
 }

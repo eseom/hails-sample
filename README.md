@@ -1,15 +1,14 @@
 # hails-sample
 - hails: advanced web stack with hapijs, sequelize, kuejs
-- typescript version
 
 # features
-- typescript
+- es7 (include import without any configurations)
 - django module style
-- tslint integrated
+- eslint
 - hapi-swagger
 
 # required
-- node
+- node >= 8.9.0
 - redis
 
 # usage
@@ -20,9 +19,15 @@ yarn
 yarn hails db:up
 yarn dev
 open http://localhost:3000
+
+# db migration
+yarn hails db:create -- --name <new migration name>
+yarn hails db:up
+yarn hails db:down
 ```
 
 # files idiom
+- app.js: tools for the module (eg. redis client)
 - api.js: restful apis
 - view.js: endpoint for webbrowser with templates
 - task.js: kuejs jobs queue with redis
@@ -30,15 +35,25 @@ open http://localhost:3000
 
 # default-options
 ```
-module.exports = {
-  version: undefined,
-  port: 3000,
+export default {
+  context: undefined,
+  vesion: undefined,
+  connection: {
+    host: '0.0.0.0',
+    port: 3000,
+  },
+  logger: {
+    level: 'silly',
+  },
   modules: [],
-  moduleFilenames: ['api', 'view', 'task'],
+  moduleFilenames: ['api', 'app', 'method', 'view', 'task'],
   modelFilenames: ['model'],
-  useSequelize: true,
-  redis: {
-    url: 'redis://localhost:6379/0',
+  useSequelize: false,
+  viewEngine: {
+    type: 'nunjucks',
+  },
+  scheduler: {
+    enable: false,
   },
   swagger: {
     info: {
@@ -47,16 +62,14 @@ module.exports = {
     grouping: 'tags',
   },
   yar: {
-    storeBlank: false,
-    maxCookieSize: 0, // use server side storage
-    cache: {
-      cache: 'session',
+    engine: {
+      type: 'memory',
     },
     cookieOptions: {
       password: 'the-password-must-be-at-least-32-characters-long',
       isSecure: false,
     },
-  }
+  },
 }
 ```
 
@@ -65,19 +78,13 @@ module.exports = {
 # sample project's files structure
 ```
 src
-└── server
-    ├── core
-    │   ├── api.js
-    │   ├── task.js
-    │   ├── templates
-    │   │   └── index.html
-    │   └── view.js
-    ├── index.js
-    └── user
-        ├── api.js
-        ├── model.js
-        ├── task.js
-        ├── templates
-        │   └── user.html
-        └── view.js
+  ├── core
+  │   ├── app.js
+  │   ├── api.js
+  │   ├── task.js
+  │   ├── model.js
+  │   ├── templates
+  │   │   ├── base.html
+  │   │   └── index.html
+  │   └── view.js
 ```
