@@ -15,6 +15,7 @@
 ```
 git clone https://github.com/eseom/hails-sample <project name>
 cd <project name>
+docker-compose up -d
 yarn
 yarn hails db:up
 yarn dev
