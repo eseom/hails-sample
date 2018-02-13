@@ -2,6 +2,9 @@ const redisDSN = 'redis://:dev@localhost:19011/0'
 
 module.exports = {
   development: {
+connection: {
+port: process.env.PORT,
+},
     context: './src',
     modules: [
       'core',

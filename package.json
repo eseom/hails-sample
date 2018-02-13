@@ -4,7 +4,7 @@
     "dev": "hails run"
   },
   "dependencies": {
-    "hails": "^0.4.2"
+    "hails": "^0.4.5"
   },
   "devDependencies": {
     "eslint": "^4.17.0",
