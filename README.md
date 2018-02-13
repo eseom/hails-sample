@@ -25,6 +25,10 @@ open http://localhost:3000
 yarn hails db:create -- --name <new migration name>
 yarn hails db:up
 yarn hails db:down
+
+# custom commands
+yarn hails test_command
+# see ./src/core/command.js
 ```
 
 # files idiom
